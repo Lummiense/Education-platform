@@ -1,10 +1,8 @@
-using api;
-using api.Service;
+using Service;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-
-
+using Education_platform;
 
 var builder = WebApplication.CreateBuilder(args);
 string connection = builder.Configuration.GetConnectionString("Db");

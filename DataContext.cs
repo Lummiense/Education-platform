@@ -1,8 +1,8 @@
-﻿using api.Entities;
+﻿using Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography.X509Certificates;
 
-namespace api
+namespace Education_platform
 {
     public class DataContext:DbContext
     {

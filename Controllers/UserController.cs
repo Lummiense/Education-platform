@@ -1,5 +1,5 @@
-﻿using api.Entities;
-using api.Service;
+﻿using Models.Entities;
+using Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,11 +23,17 @@ namespace Education_platform.Controllers
             }
             return View(users);
         }
-        
+
+        [HttpGet]
+        public ActionResult Add() => View();
         public async Task<ActionResult<UserEntity>> Add(UserEntity user)
         {
-            var result = await _userService.Add(user);
-            return View(result);
+            if (ModelState.IsValid)
+            {
+                var result = await _userService.Add(user);
+                return View(result);
+            }
+            return View();
         }
     }
     /* [HttpGet]

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace api.Entities
+namespace Models.Entities
 {
     public class UserEntity:IEntity
     {

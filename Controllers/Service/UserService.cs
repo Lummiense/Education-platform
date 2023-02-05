@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using api.Entities;
+using Models.Entities;
 
-namespace api.Service
+namespace Service
 {
     public class UserService:IUserService
     {

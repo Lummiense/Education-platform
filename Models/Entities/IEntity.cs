@@ -1,4 +1,4 @@
-﻿namespace api.Entities
+﻿namespace Models.Entities
 {
     public interface IEntity
     {

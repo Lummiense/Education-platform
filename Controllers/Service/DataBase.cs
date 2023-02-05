@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using api.Entities;
+using Service;
+using Models.Entities;
+using Education_platform;
 
-namespace api.Service
+namespace Service
 {
     public class DataBase:IDataBase
     {
