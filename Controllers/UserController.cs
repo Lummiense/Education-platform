@@ -1,7 +1,9 @@
-﻿using Models.Entities;
-using Service;
+﻿using Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Entities;
+using Education_platform.Models;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace Education_platform.Controllers
 {
@@ -33,7 +35,24 @@ namespace Education_platform.Controllers
                 var result = await _userService.Add(user);
                 return View(result);
             }
-            return View();
+            else
+            {
+                string errorMessages = "";
+                foreach (var item in ModelState)
+                {
+                    // если для определенного элемента имеются ошибки
+                    if (item.Value.ValidationState == ModelValidationState.Invalid)
+                    {
+                        errorMessages = $"{errorMessages}\nОшибки для свойства {item.Key}:\n";
+                        // пробегаемся по всем ошибкам
+                        foreach (var error in item.Value.Errors)
+                        {
+                            errorMessages = $"{errorMessages}{error.ErrorMessage}\n";
+                        }
+                    }
+                }
+                return View(errorMessages);
+            }
         }
     }
     /* [HttpGet]

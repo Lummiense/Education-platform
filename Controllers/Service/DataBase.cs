@@ -2,8 +2,8 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Service;
-using Models.Entities;
 using Education_platform;
+using Entities;
 
 namespace Service
 {

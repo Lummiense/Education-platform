@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Entities;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using Models.Entities;
 
 namespace Service
 {

@@ -1,15 +1,21 @@
-﻿using System;
+﻿using Microsoft.Build.Framework;
+using System;
 
-namespace Models.Entities
+namespace Entities
 {
     public class UserEntity:IEntity
     {
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public string SecondName { get; set; }
-        public DateTime BirthDate { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
+        [Required]
+        public string? Name { get; set; }
+        [Required]
+        public string? Surname { get; set; }
+        [Required]
+        public string? SecondName { get; set; }
+        public DateOnly BirthDate { get; set; }
+        [Required]
+        public string? Phone { get; set; }
+        [Required]
+        public string? Email { get; set; }
         public uint Id { get; set; }
             
         
