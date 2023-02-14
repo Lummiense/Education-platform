@@ -20,6 +20,7 @@ namespace Service
             var entity = await _context.Set<T>().AddAsync(newEntity);
             return entity.Entity.Id;
         }
+        
 
         public List<T> GetAll<T>() where T : class, IEntity
         {
@@ -30,5 +31,7 @@ namespace Service
         {
             return await _context.SaveChangesAsync();
         }
+
+          
     }
 }

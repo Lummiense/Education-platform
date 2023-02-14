@@ -32,8 +32,8 @@ namespace Education_platform.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _userService.Add(user);
-                return View(result);
+                await _userService.Add(user);
+                return View();
             }
             else
             {

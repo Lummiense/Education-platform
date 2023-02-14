@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Education_platform;
+using Education_platform.Controllers.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 string connection = builder.Configuration.GetConnectionString("Db");
@@ -11,6 +12,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DataContext>(options => options.UseNpgsql(connection));
 builder.Services.AddScoped<IDataBase, DataBase>();
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<ITestingService, TestingService>();
 
 
 var app = builder.Build();
